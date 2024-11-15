@@ -20,7 +20,7 @@ public class ClothesRepository {
     public void initData() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            List<Clothes> clothesList = objectMapper.readValue(new File("clothes.json"),
+            List<Clothes> clothesList = objectMapper.readValue(new File("live-demo-main/src/main/java/lsit/Repositories/clothes.json"),
                     new TypeReference<List<Clothes>>() {});
             clothesList.forEach(clothesItem -> clothes.put(clothesItem.id, clothesItem));
         } catch (IOException e) {
