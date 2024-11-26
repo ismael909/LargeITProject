@@ -3,30 +3,35 @@
         "id": "f4d5f8ee-2b29-43e3-a629-848c9d16b81a",
         "name": "Red T-Shirt",
         "kind": "TSHIRT",
-        "size": 42
+        "size": 42,
+        "price": 15
     },
     {
         "id": "0a3b7a18-43e1-41e1-b7e3-7089d7f5823e",
         "name": "Blue Sweater",
         "kind": "SWEATER",
-        "size": 48
+        "size": 48,
+        "price": 25
     },
     {
         "id": "9bb17d9d-5432-454e-bab6-7319d414d6a8",
         "name": "Green Jacket",
         "kind": "JACKET",
-        "size": 50
+        "size": 50,
+        "price": 50
     },
     {
         "id": "d85e6fa9-3d8e-4fdd-892b-ff3d6d9f9f9d",
         "name": "Black Pants",
         "kind": "PANTS",
-        "size": 34
+        "size": 34,
+        "price": 30
     },
     {
         "id": "e6f8a7f3-d8e4-4d69-a6c1-02b41d8e4291",
         "name": "White Shirt",
         "kind": "SHIRT",
-        "size": 40
+        "size": 40,
+        "price": 40
     }
 ]

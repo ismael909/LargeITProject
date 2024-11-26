@@ -21,4 +21,7 @@ public class BasketRepository {
     public void removeFromBasket(UUID clothesId) {
         basket.removeClothes(clothesId);
     }
+    public void clearBasket() {
+        basket.clothesIds.clear();
+    }
 }

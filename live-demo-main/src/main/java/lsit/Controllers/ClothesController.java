@@ -18,26 +18,36 @@ import org.springframework.web.bind.annotation.*;
 
 import lsit.Models.Basket;
 import lsit.Repositories.BasketRepository;
-
-import java.util.UUID;
+import lsit.Models.Client;
+import lsit.Repositories.ClientRepository;
 
 @RestController
 public class ClothesController {
 
     private  ClothesRepository ClothesRepository;
     private  BasketRepository basketRepository;
+private ClientRepository clientRepository;
 
-    public ClothesController(ClothesRepository clothesRepository, BasketRepository basketRepository) {
+    public ClothesController(ClothesRepository clothesRepository, BasketRepository basketRepository,ClientRepository clientRepository) {
         this.ClothesRepository = clothesRepository;
         this.basketRepository = basketRepository;
+        this.clientRepository = clientRepository;
+        
     }
 
-    @PostMapping("/basket/add/{clothesId}")
-    public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId) {
+    @PostMapping("/basket/add/{clothesId}/{clientId}")
+    public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
         Clothes clothes = ClothesRepository.get(clothesId);
+        Client client = clientRepository.get(clientId);
+
         if (clothes == null) {
             return ResponseEntity.badRequest().body("Clothes item not found.");
         }
+
+        if (client == null) {
+            return ResponseEntity.badRequest().body("Client not found.");
+        }
+        
         basketRepository.addToBasket(clothesId);
         return ResponseEntity.ok("Item added to basket.");
     }
@@ -57,28 +67,52 @@ public class ClothesController {
         return ResponseEntity.ok(basket);
     }
 
-    @PostMapping("/order")
-    public ResponseEntity<String> order() {
-        Basket basket = basketRepository.getBasket();
-        if (basket == null || basket.clothesIds.isEmpty()) {
-            return ResponseEntity.badRequest().body("Basket is empty. Please add items to the basket before ordering.");
-        }
+    @PostMapping("/order/{clientId}")
+public ResponseEntity<String> order(@PathVariable UUID clientId) {
+    Basket basket = basketRepository.getBasket();
+    Client client = clientRepository.get(clientId);
 
-        // Check availability of each item
-        StringBuilder unavailableItems = new StringBuilder();
-        for (UUID clothesId : basket.clothesIds) {
-            if (ClothesRepository.get(clothesId) == null) {
-                unavailableItems.append("Item with ID ").append(clothesId).append(" is out of stock.\n");
-            }
-        }
-
-        if (unavailableItems.length() > 0) {
-            return ResponseEntity.badRequest().body(unavailableItems.toString());
-        }
-
-        // If all items are available, process the order
-        return ResponseEntity.ok("Order placed successfully!");
+    if (basket == null || basket.clothesIds.isEmpty()) {
+        return ResponseEntity.badRequest().body("Basket is empty. Please add items to the basket before ordering.");
     }
+
+    if (client == null) {
+        return ResponseEntity.badRequest().body("Client not found.");
+    }
+
+    // Calculate total price of items in the basket
+    int totalPrice = 0;
+    StringBuilder unavailableItems = new StringBuilder();
+
+    for (UUID clothesId : basket.clothesIds) {
+        Clothes clothes = ClothesRepository.get(clothesId);
+        if (clothes == null) {
+            unavailableItems.append("Item with ID ").append(clothesId).append(" is out of stock.\n");
+        } else {
+            totalPrice += clothes.price;
+        }
+    }
+
+    // Check for unavailable items
+    if (unavailableItems.length() > 0) {
+        return ResponseEntity.badRequest().body(unavailableItems.toString());
+    }
+
+    // Check if the client has enough credits
+    if (client.credit < totalPrice) {
+        return ResponseEntity.badRequest()
+                .body("Insufficient credits. Your total is " + totalPrice + ", but you only have " + client.credit + " credits.");
+    }
+
+    // Deduct the total price from client's credits
+    client.credit -= totalPrice;
+    clientRepository.update(client); // Update client data in the repository
+
+    // Clear the basket (assuming the order is successfully placed)
+    basketRepository.clearBasket();
+
+    return ResponseEntity.ok("Order placed successfully! Remaining credits: " + client.credit);
+}
 
 
     @GetMapping("/clothes")

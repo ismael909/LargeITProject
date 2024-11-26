@@ -7,6 +7,7 @@ public class Clothes {
     public String name;
     public ClothesKind kind;
     public int size;
+    public int price;
     public enum ClothesKind{
         TSHIRT, SWEATER, SHIRT,JACKET,PANTS,BENNIE,GLOVES
     }
