@@ -10,12 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import lsit.Utils.FileUtil;
 import lsit.Models.Clothes;
 
 @Repository
 public class ClothesRepository {
     static HashMap<UUID, Clothes> clothes = new HashMap<>();
+    private static final String FILE_PATH = "clothes.json";
     @PostConstruct
     public void initData() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -51,5 +52,25 @@ public class ClothesRepository {
 
     public List<Clothes> list(){
         return new ArrayList<>(clothes.values());
+    }
+    public void loadClothes() {
+        try {
+            Clothes[] loadedClothes = FileUtil.readFromFile(FILE_PATH, Clothes[].class);
+            if (loadedClothes != null) {
+                for (Clothes item : loadedClothes) {
+                    clothes.put(item.id, item);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to load clothes: " + e.getMessage());
+        }
+    }
+
+    public void saveClothes() {
+        try {
+            FileUtil.writeToFile(FILE_PATH, clothes.values());
+        } catch (IOException e) {
+            System.err.println("Failed to save clothes: " + e.getMessage());
+        }
     }
 }
