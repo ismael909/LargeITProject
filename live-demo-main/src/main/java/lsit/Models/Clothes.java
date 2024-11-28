@@ -9,6 +9,6 @@ public class Clothes {
     public int size;
     public int price;
     public enum ClothesKind{
-        TSHIRT, SWEATER, SHIRT,JACKET,PANTS,BENNIE,GLOVES
+        TSHIRT, SWEATER, SHIRT, JACKET, PANTS, BEANIE, GLOVES
     }
 }
