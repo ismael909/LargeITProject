@@ -1,0 +1,30 @@
+2024-11-30 20:42:33 INFO  lsit.Main - Starting Main using Java 17.0.13 with PID 16972 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-11-30 20:42:33 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 20:42:37 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-30 20:42:37 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-30 20:42:37 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-30 20:42:37 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-30 20:42:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-30 20:42:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3932 ms
+2024-11-30 20:42:41 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-30 20:42:41 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-11-30 20:42:41 INFO  lsit.Main - Started Main in 9.326 seconds (process running for 10.178)
+2024-11-30 20:42:54 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-30 20:42:54 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-30 20:42:54 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-11-30 20:44:28 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = null
+2024-11-30 20:46:34 INFO  lsit.Main - Starting Main using Java 17.0.13 with PID 11008 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-11-30 20:46:34 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 20:46:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-30 20:46:38 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-30 20:46:38 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-30 20:46:38 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-30 20:46:39 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-30 20:46:39 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4815 ms
+2024-11-30 20:46:44 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-30 20:46:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-11-30 20:46:44 INFO  lsit.Main - Started Main in 12.496 seconds (process running for 13.686)
+2024-11-30 20:46:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-30 20:46:44 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-30 20:46:44 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-11-30 20:46:46 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = [lsit-ken3239/students, ls_it_project, lsit-ken3239/roles/clothingstore/customer, lsit-ken3239/roles/clothingstore/sales, lsit-ken3239/roles/clothingstore/warehousemanager, lsit-ken3239/roles/clothingstore/credit]

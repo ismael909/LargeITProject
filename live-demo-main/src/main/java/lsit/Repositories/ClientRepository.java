@@ -1,30 +1,41 @@
 package lsit.Repositories;
 
-import lsit.Models.Client;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import lsit.Utils.FileUtil;
 
-import java.io.IOException;
 import org.springframework.stereotype.Repository;
+
+import lsit.Models.Client;
+import lsit.Utils.FileUtil;
 @Repository
 public class ClientRepository {
+
     private Map<UUID, Client> clients = new HashMap<>();
+
     private static final String FILE_PATH = "clients.json";
+
     public ClientRepository() {
+
         // Initialize with some test data
+
         initializeClients();
             }
             private void initializeClients() {
+
                 // Sample client initialization
                 UUID clientId = UUID.randomUUID();
                 Client sampleClient = new Client(clientId, "Achilles", 150); // Example client with 150 credits
                 add(sampleClient);
                 System.out.println("Initialized client: " + sampleClient.name + " with ID " + clientId + " and credits " + sampleClient.credit);
+
             }
+
             public void add(Client client) {
+
         clients.put(client.id, client);
+
     }
 
     public Client get(UUID clientId) {
