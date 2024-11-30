@@ -1,104 +1,103 @@
-// package lsit.Controllers;
+package lsit.Controllers;
 
-// import java.util.UUID;
+import java.util.UUID;
 
-// import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 
-// import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
-// import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
-// import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PathVariable;
 
-// import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-// import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-// import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestController;
 
-// import lsit.Models.Basket;
+import lsit.Models.Basket;
 
-// import lsit.Models.Client;
+import lsit.Models.Client;
 
-// import lsit.Models.Clothes;
+import lsit.Models.Clothes;
 
-// import lsit.Repositories.BasketRepository;
+import lsit.Repositories.BasketRepository;
 
-// import lsit.Repositories.ClientRepository;
+import lsit.Repositories.ClientRepository;
 
-// import lsit.Repositories.ClothesRepository;
+import lsit.Repositories.ClothesRepository;
 
-// @RestController
+@RestController
 
-// @RequestMapping("/basket")
+@RequestMapping("/basket")
 
-// public class ClothesandClientController {
+public class ClothesandClientController {
 
-//     private final ClothesRepository clothesRepository;
+    private final ClothesRepository clothesRepository;
 
-//     private final BasketRepository basketRepository;
+    private final BasketRepository basketRepository;
 
-//     private final ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
-//     public ClothesandClientController(ClothesRepository clothesRepository, BasketRepository basketRepository, ClientRepository clientRepository) {
+    public ClothesandClientController(ClothesRepository clothesRepository, BasketRepository basketRepository, ClientRepository clientRepository) {
 
-//         this.clothesRepository = clothesRepository;
+        this.clothesRepository = clothesRepository;
 
-//         this.basketRepository = basketRepository;
+        this.basketRepository = basketRepository;
 
-//         this.clientRepository = clientRepository;
+        this.clientRepository = clientRepository;
 
-//     }
+    }
 
-//     @PostMapping("/add/{clothesId}/{clientId}")
-    
-//     public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
+    @PostMapping("/add/{clothesId}/{clientId}")
 
-//         Clothes clothes = clothesRepository.get(clothesId);
+    @PreAuthorize("hasAnyRole('CUSTOMER','SALES')") 
+    public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
 
-//         Client client = clientRepository.get(clientId);
+        Clothes clothes = clothesRepository.get(clothesId);
+        
+        Client client = clientRepository.get(clientId);
 
-//         if (clothes == null) {
+        if (clothes == null) {
+            return ResponseEntity.badRequest().body("Clothes item not found.");
+        }
 
-//             return ResponseEntity.badRequest().body("Clothes item not found.");
+        if (client == null) {
+            return ResponseEntity.badRequest().body("Client not found.");
+        }
 
-//         }
+        basketRepository.addToBasket(clothesId);
+        return ResponseEntity.ok("Item added to basket.");
+    }
 
-//         if (client == null) {
+    @DeleteMapping("/remove/{clothesId}")
 
-//             return ResponseEntity.badRequest().body("Client not found.");
+    @PreAuthorize("hasAnyRole('CUSTOMER', 'SALES')") 
 
-//         }
+    public ResponseEntity<String> removeFromBasket(@PathVariable UUID clothesId) {
 
-//         basketRepository.addToBasket(clothesId);
+        basketRepository.removeFromBasket(clothesId);
 
-//         return ResponseEntity.ok("Item added to basket.");
+        return ResponseEntity.ok("Item removed from basket.");
+    }
 
-//     }
+    @GetMapping
 
-//     @DeleteMapping("/remove/{clothesId}")
+    @PreAuthorize("hasAnyRole('CUSTOMER', 'SALES')") 
 
-//     public ResponseEntity<String> removeFromBasket(@PathVariable UUID clothesId) {
+    public ResponseEntity<Basket> getBasket() {
 
-//         basketRepository.removeFromBasket(clothesId);
+        Basket basket = basketRepository.getBasket();
 
-//         return ResponseEntity.ok("Item removed from basket.");
+        if (basket == null || basket.clothesIds.isEmpty()) {
 
-//     }
+            return ResponseEntity.ok(new Basket());
 
-//     @GetMapping
+        }
 
-//     public ResponseEntity<Basket> getBasket() {
-
-//         Basket basket = basketRepository.getBasket();
-
-//         if (basket == null || basket.clothesIds.isEmpty()) {
-
-//             return ResponseEntity.ok(new Basket());
-
-//         }
-
-//         return ResponseEntity.ok(basket);
-//     }
-// }
-
+        return ResponseEntity.ok(basket);
+        
+    }
+}

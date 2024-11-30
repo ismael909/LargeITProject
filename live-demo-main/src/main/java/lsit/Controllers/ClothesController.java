@@ -1,221 +1,223 @@
-package lsit.Controllers;
+// package lsit.Controllers;
 
-import java.util.List;
+// import java.util.List;
 
-import java.util.UUID;
+// import java.util.UUID;
 
-import org.springframework.http.ResponseEntity;
+// import org.springframework.http.ResponseEntity;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
+// import org.springframework.web.bind.annotation.DeleteMapping;
 
-import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.PathVariable;
 
-import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.PostMapping;
 
-import org.springframework.web.bind.annotation.PutMapping;
+// import org.springframework.web.bind.annotation.PutMapping;
 
-import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RequestBody;
 
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.RestController;
 
-import lsit.Models.Basket;
+// import lsit.Models.Basket;
 
-import lsit.Models.Client;
+// import lsit.Models.Client;
 
-import lsit.Models.Clothes;
+// import lsit.Models.Clothes;
 
-import lsit.Repositories.BasketRepository;
+// import lsit.Repositories.BasketRepository;
 
-import lsit.Repositories.ClientRepository;
+// import lsit.Repositories.ClientRepository;
 
-import lsit.Repositories.ClothesRepository;
+// import lsit.Repositories.ClothesRepository;
 
-@RestController
-public class ClothesController {
+// @RestController
+// public class ClothesController {
 
-    private  ClothesRepository ClothesRepository;
-    private  BasketRepository basketRepository;
-private ClientRepository clientRepository;
+// private  ClothesRepository ClothesRepository;
 
-    public ClothesController(ClothesRepository clothesRepository, BasketRepository basketRepository,ClientRepository clientRepository) {
+// private  BasketRepository basketRepository;
 
-        this.ClothesRepository = clothesRepository;
+// private ClientRepository clientRepository;
 
-        this.basketRepository = basketRepository;
+//     public ClothesController(ClothesRepository clothesRepository, BasketRepository basketRepository,ClientRepository clientRepository) {
 
-        this.clientRepository = clientRepository;
+//         this.ClothesRepository = clothesRepository;
+
+//         this.basketRepository = basketRepository;
+
+//         this.clientRepository = clientRepository;
         
-    }
+//     }
 
-    @PostMapping("/basket/add/{clothesId}/{clientId}")
+//     @PostMapping("/basket/add/{clothesId}/{clientId}")
 
-    public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
+//     public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
 
-        Clothes clothes = ClothesRepository.get(clothesId);
+//         Clothes clothes = ClothesRepository.get(clothesId);
 
-        Client client = clientRepository.get(clientId);
+//         Client client = clientRepository.get(clientId);
 
-        if (clothes == null) {
+//         if (clothes == null) {
 
-            return ResponseEntity.badRequest().body("Clothes item not found.");
+//             return ResponseEntity.badRequest().body("Clothes item not found.");
 
-        }
+//         }
 
-        if (client == null) {
+//         if (client == null) {
             
-            return ResponseEntity.badRequest().body("Client not found.");
+//             return ResponseEntity.badRequest().body("Client not found.");
 
-        }
+//         }
         
-        basketRepository.addToBasket(clothesId);
+//         basketRepository.addToBasket(clothesId);
 
-        return ResponseEntity.ok("Item added to basket.");
-    }
+//         return ResponseEntity.ok("Item added to basket.");
+//     }
 
-    @DeleteMapping("/basket/remove/{clothesId}")
+//     @DeleteMapping("/basket/remove/{clothesId}")
 
-    public ResponseEntity<String> removeFromBasket(@PathVariable UUID clothesId) {
+//     public ResponseEntity<String> removeFromBasket(@PathVariable UUID clothesId) {
 
-        basketRepository.removeFromBasket(clothesId);
+//         basketRepository.removeFromBasket(clothesId);
 
-        return ResponseEntity.ok("Item removed from basket.");
+//         return ResponseEntity.ok("Item removed from basket.");
 
-    }
+//     }
 
-    @GetMapping("/basket")
+//     @GetMapping("/basket")
 
-    public ResponseEntity<Basket> getBasket() {
+//     public ResponseEntity<Basket> getBasket() {
 
-        Basket basket = basketRepository.getBasket();
+//         Basket basket = basketRepository.getBasket();
 
-        if (basket == null || basket.clothesIds.isEmpty()) {
+//         if (basket == null || basket.clothesIds.isEmpty()) {
 
-            return ResponseEntity.ok(new Basket());
+//             return ResponseEntity.ok(new Basket());
 
-        }
+//         }
 
-        return ResponseEntity.ok(basket);
-    }
+//         return ResponseEntity.ok(basket);
+//     }
 
-    @PostMapping("/order/{clientId}")
+//     @PostMapping("/order/{clientId}")
 
-public ResponseEntity<String> order(@PathVariable UUID clientId) {
+// public ResponseEntity<String> order(@PathVariable UUID clientId) {
 
-    Basket basket = basketRepository.getBasket();
+//     Basket basket = basketRepository.getBasket();
 
-    Client client = clientRepository.get(clientId);
+//     Client client = clientRepository.get(clientId);
 
-    if (basket == null || basket.clothesIds.isEmpty()) {
+//     if (basket == null || basket.clothesIds.isEmpty()) {
 
-        return ResponseEntity.badRequest().body("Basket is empty. Please add items to the basket before ordering.");
+//         return ResponseEntity.badRequest().body("Basket is empty. Please add items to the basket before ordering.");
 
-    }
+//     }
 
-    if (client == null) {
+//     if (client == null) {
 
-        return ResponseEntity.badRequest().body("Client not found.");
+//         return ResponseEntity.badRequest().body("Client not found.");
 
-    }
+//     }
 
-    // Calculate total price of items in the basket
-    int totalPrice = 0;
+//     // Calculate total price of items in the basket
+//     int totalPrice = 0;
 
-    StringBuilder unavailableItems = new StringBuilder();
+//     StringBuilder unavailableItems = new StringBuilder();
 
-    for (UUID clothesId : basket.clothesIds) {
+//     for (UUID clothesId : basket.clothesIds) {
 
-        Clothes clothes = ClothesRepository.get(clothesId);
+//         Clothes clothes = ClothesRepository.get(clothesId);
 
-        if (clothes == null) {
+//         if (clothes == null) {
 
-            unavailableItems.append("Item with ID ").append(clothesId).append(" is out of stock.\n");
+//             unavailableItems.append("Item with ID ").append(clothesId).append(" is out of stock.\n");
 
-        } else {
+//         } else {
 
-            totalPrice += clothes.price;
+//             totalPrice += clothes.price;
 
-        }
-    }
+//         }
+//     }
 
-    // Check for unavailable items
+//     // Check for unavailable items
 
-    if (unavailableItems.length() > 0) {
+//     if (unavailableItems.length() > 0) {
 
-        return ResponseEntity.badRequest().body(unavailableItems.toString());
+//         return ResponseEntity.badRequest().body(unavailableItems.toString());
 
-    }
+//     }
 
-    // Check if the client has enough credits
+//     // Check if the client has enough credits
 
-    if (client.credit < totalPrice) {
+//     if (client.credit < totalPrice) {
 
-        return ResponseEntity.badRequest()
+//         return ResponseEntity.badRequest()
 
-                .body("Insufficient credits. Your total is " + totalPrice + ", but you only have " + client.credit + " credits.");
+//                 .body("Insufficient credits. Your total is " + totalPrice + ", but you only have " + client.credit + " credits.");
 
-    }
+//     }
 
-    // Deduct the total price from client's credits
+//     // Deduct the total price from client's credits
 
-    client.credit -= totalPrice;
+//     client.credit -= totalPrice;
 
-    // Update client data in the repository
+//     // Update client data in the repository
 
-    clientRepository.update(client); 
+//     clientRepository.update(client); 
 
-    // Clear the basket (assuming the order is successfully placed)
+//     // Clear the basket (assuming the order is successfully placed)
 
-    basketRepository.clearBasket();
+//     basketRepository.clearBasket();
 
-    return ResponseEntity.ok("Order placed successfully! Remaining credits: " + client.credit);
-}
+//     return ResponseEntity.ok("Order placed successfully! Remaining credits: " + client.credit);
+// }
 
-    @GetMapping("/clothes")
+//     @GetMapping("/clothes")
 
-    public List<Clothes> list(){
+//     public List<Clothes> list(){
 
-        return ClothesRepository.list();
+//         return ClothesRepository.list();
 
-    }
+//     }
 
-    @GetMapping("/clothes/{id}")
+//     @GetMapping("/clothes/{id}")
 
-    public Clothes get(@PathVariable("id") UUID id){
+//     public Clothes get(@PathVariable("id") UUID id){
 
-        return ClothesRepository.get(id);
+//         return ClothesRepository.get(id);
 
-    }
+//     }
 
-    @PostMapping("/clothes")
+//     @PostMapping("/clothes")
 
-    public Clothes add(@RequestBody Clothes p){
+//     public Clothes add(@RequestBody Clothes p){
 
-        ClothesRepository.add(p);
+//         ClothesRepository.add(p);
 
-        return p;
+//         return p;
 
-    }
+//     }
 
-    @PutMapping("/clothes/{id}")
+//     @PutMapping("/clothes/{id}")
 
-    public Clothes update(@PathVariable("id") UUID id, @RequestBody Clothes p){
+//     public Clothes update(@PathVariable("id") UUID id, @RequestBody Clothes p){
 
-        p.id = id;
+//         p.id = id;
 
-        ClothesRepository.update(p);
+//         ClothesRepository.update(p);
 
-        return p;
+//         return p;
 
-    }
+//     }
 
-    @DeleteMapping("/clothes/{id}")
+//     @DeleteMapping("/clothes/{id}")
 
-    public void delete(@PathVariable("id") UUID id){
+//     public void delete(@PathVariable("id") UUID id){
 
-        ClothesRepository.remove(id);
+//         ClothesRepository.remove(id);
 
-    }
+//     }
 
- }
+//  }
