@@ -53,9 +53,6 @@ public class Config {
                 if (groups.contains("lsit-ken3239/roles/ClothingStore/Customer")) {
                     authorities.add(new SimpleGrantedAuthority("ROLE_CUSTOMER"));
                 }
-                if (groups.contains("lsit-ken3239/roles/ClothingStore/Owner")) {
-                    authorities.add(new SimpleGrantedAuthority("ROLE_OWNER"));
-                }
                 if (groups.contains("lsit-ken3239/roles/ClothingStore/Sales")) {
                     authorities.add(new SimpleGrantedAuthority("ROLE_SALES"));
                 }
