@@ -1,72 +1,72 @@
-package lsit.Repositories;
+// package lsit.Repositories;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+// import java.io.IOException;
+// import java.util.HashMap;
+// import java.util.Map;
+// import java.util.UUID;
 
-import org.springframework.stereotype.Repository;
+// import org.springframework.stereotype.Repository;
 
-import lsit.Models.Client;
-import lsit.Utils.FileUtil;
-@Repository
-public class ClientRepository {
+// import lsit.Models.Client;
+// import lsit.Utils.FileUtil;
+// @Repository
+// public class ClientRepository {
 
-    private Map<UUID, Client> clients = new HashMap<>();
+//     private Map<UUID, Client> clients = new HashMap<>();
 
-    private static final String FILE_PATH = "clients.json";
+//     private static final String FILE_PATH = "clients.json";
 
-    public ClientRepository() {
+//     public ClientRepository() {
 
-        // Initialize with some test data
+//         // Initialize with some test data
 
-        initializeClients();
-            }
-            private void initializeClients() {
+//         initializeClients();
+//             }
+//             private void initializeClients() {
 
-                // Sample client initialization
-                UUID clientId = UUID.randomUUID();
-                Client sampleClient = new Client(clientId, "Achilles", 150); // Example client with 150 credits
-                add(sampleClient);
-                System.out.println("Initialized client: " + sampleClient.name + " with ID " + clientId + " and credits " + sampleClient.credit);
+//                 // Sample client initialization
+//                 UUID clientId = UUID.randomUUID();
+//                 Client sampleClient = new Client(clientId, "Achilles", 150); // Example client with 150 credits
+//                 add(sampleClient);
+//                 System.out.println("Initialized client: " + sampleClient.name + " with ID " + clientId + " and credits " + sampleClient.credit);
 
-            }
+//             }
 
-            public void add(Client client) {
+//             public void add(Client client) {
 
-        clients.put(client.id, client);
+//         clients.put(client.id, client);
 
-    }
+//     }
 
-    public Client get(UUID clientId) {
-        return clients.get(clientId);
-    }
+//     public Client get(UUID clientId) {
+//         return clients.get(clientId);
+//     }
 
-    public void update(Client client) {
-        clients.put(client.id, client);
-    }
+//     public void update(Client client) {
+//         clients.put(client.id, client);
+//     }
 
-    public void remove(UUID clientId) {
-        clients.remove(clientId);
-    }
-    public void loadClients() {
-        try {
-            Client[] loadedClients = FileUtil.readFromFile(FILE_PATH, Client[].class);
-            if (loadedClients != null) {
-                for (Client client : loadedClients) {
-                    clients.put(client.id, client);
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Failed to load clients: " + e.getMessage());
-        }
-    }
+//     public void remove(UUID clientId) {
+//         clients.remove(clientId);
+//     }
+//     public void loadClients() {
+//         try {
+//             Client[] loadedClients = FileUtil.readFromFile(FILE_PATH, Client[].class);
+//             if (loadedClients != null) {
+//                 for (Client client : loadedClients) {
+//                     clients.put(client.id, client);
+//                 }
+//             }
+//         } catch (IOException e) {
+//             System.err.println("Failed to load clients: " + e.getMessage());
+//         }
+//     }
 
-    public void saveClients() {
-        try {
-            FileUtil.writeToFile(FILE_PATH, clients.values());
-        } catch (IOException e) {
-            System.err.println("Failed to save clients: " + e.getMessage());
-        }
-    }
-}
+//     public void saveClients() {
+//         try {
+//             FileUtil.writeToFile(FILE_PATH, clients.values());
+//         } catch (IOException e) {
+//             System.err.println("Failed to save clients: " + e.getMessage());
+//         }
+//     }
+// }

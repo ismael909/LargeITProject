@@ -1,5 +1,12 @@
 #https://gitlab.com/lsit-ken3239/live-demo
+
 spring:
+  cloud:
+      gcp:
+        credentials:
+          location: classpath:ls-it-project-3622729b0118.json
+        storage:
+          bucket-name: clothes-bucket
   security:
     oauth2:
       client:
@@ -15,7 +22,6 @@ spring:
             issuer-uri: https://gitlab.com
             user-name-attribute: sub
 
-
 #old
 #application  id: 31c1aa88d9faab0cf344df7a75c1e4ff8f7bd2d7f7089cabaf1044ed9548a8e5
 #secret : gloas-89ab8b6549368ff7b6dab500ec858dbc29878261ae3312ba5dfa1f5a71f62365
@@ -23,3 +29,16 @@ spring:
 #new
 #application id: 9b5c276c80ee9fdf7be2534cb60c7ab377518dbabc4b65596c3719ef86f5fe09
 #secret: gloas-bad9b0f3a497f1f394f4d63f87e003141b540ccebb05f9f2144909c76b99e811
+
+
+#https://gitlab.com/oauth/authorize
+
+#https://gitlab.com/oauth/token
+
+#9b5c276c80ee9fdf7be2534cb60c7ab377518dbabc4b65596c3719ef86f5fe09
+
+#gloas-bad9b0f3a497f1f394f4d63f87e003141b540ccebb05f9f2144909c76b99e811
+
+#http://localhost:8080/login/oauth2/code/gitlab
+
+#openid profile email

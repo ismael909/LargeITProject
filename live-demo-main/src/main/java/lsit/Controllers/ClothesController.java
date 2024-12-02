@@ -1,223 +1,100 @@
-// package lsit.Controllers;
+package lsit.Controllers;
 
-// import java.util.List;
+import java.util.UUID;
 
-// import java.util.UUID;
+import org.springframework.http.ResponseEntity;
 
-// import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 
-// import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
-// import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
-// import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PathVariable;
 
-// import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-// import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-// import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-// import org.springframework.web.bind.annotation.RestController;
+import lsit.Models.Clothes;
 
-// import lsit.Models.Basket;
+import lsit.Models.Order;
 
-// import lsit.Models.Client;
+import lsit.Repositories.GCSOrderRepository;
 
-// import lsit.Models.Clothes;
+import lsit.Repositories.GCSClothesRepository;
 
-// import lsit.Repositories.BasketRepository;
+@RestController
+@RequestMapping("/clothes")
+public class ClothesController {
 
-// import lsit.Repositories.ClientRepository;
+    private final GCSClothesRepository clothesRepository;
+    private final GCSOrderRepository orderRepository;
 
-// import lsit.Repositories.ClothesRepository;
+    public ClothesController(GCSClothesRepository clothesRepository, GCSOrderRepository orderRepository) {
+        this.clothesRepository = clothesRepository;
+        this.orderRepository = orderRepository;
+    }
 
-// @RestController
-// public class ClothesController {
+    @PostMapping("/add")
+    public ResponseEntity<String> addClothes(@RequestBody Clothes clothes) {
+        try {
+            clothesRepository.add(clothes);
+            return ResponseEntity.ok("Clothes added successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error adding clothes: " + e.getMessage());
+        }
+    }
 
-// private  ClothesRepository ClothesRepository;
+    // @PostMapping("/order/add/{clothesId}/{clientId}")
+    // @PreAuthorize("hasAnyRole('CUSTOMER','SALES')")
+    // public ResponseEntity<String> addToOrder(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
+    //     Clothes clothes = clothesRepository.get(clothesId);
 
-// private  BasketRepository basketRepository;
+    //     if (clothes == null) {
+    //         return ResponseEntity.badRequest().body("Clothes item not found.");
+    //     }
 
-// private ClientRepository clientRepository;
+    //     Order order = orderRepository.get(clientId);
 
-//     public ClothesController(ClothesRepository clothesRepository, BasketRepository basketRepository,ClientRepository clientRepository) {
+    //     if (order == null) {
+    //         order = new Order();
+    //         order.setClientId(clientId);
+    //     }
 
-//         this.ClothesRepository = clothesRepository;
+    //     order.getClothesIds().add(clothesId);
+    //     orderRepository.update(order);
 
-//         this.basketRepository = basketRepository;
+    //     return ResponseEntity.ok("Item added to order.");
+    // }
 
-//         this.clientRepository = clientRepository;
-        
-//     }
+    // @DeleteMapping("/order/remove/{clothesId}/{clientId}")
+    // @PreAuthorize("hasAnyRole('CUSTOMER', 'SALES')")
+    // public ResponseEntity<String> removeFromOrder(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
+    //     Order order = orderRepository.get(clientId);
 
-//     @PostMapping("/basket/add/{clothesId}/{clientId}")
+    //     if (order == null || !order.getClothesIds().contains(clothesId)) {
+    //         return ResponseEntity.badRequest().body("Order or item not found.");
+    //     }
 
-//     public ResponseEntity<String> addToBasket(@PathVariable UUID clothesId, @PathVariable UUID clientId) {
+    //     order.getClothesIds().remove(clothesId);
+    //     orderRepository.update(order);
 
-//         Clothes clothes = ClothesRepository.get(clothesId);
+    //     return ResponseEntity.ok("Item removed from order.");
+    // }
 
-//         Client client = clientRepository.get(clientId);
+    // @GetMapping("/order/{clientId}")
+    // @PreAuthorize("hasAnyRole('CUSTOMER', 'SALES')")
+    // public ResponseEntity<Order> getOrder(@PathVariable UUID clientId) {
+    //     Order order = orderRepository.get(clientId);
 
-//         if (clothes == null) {
+    //     if (order == null || order.getClothesIds().isEmpty()) {
+    //         return ResponseEntity.ok(new Order());
+    //     }
 
-//             return ResponseEntity.badRequest().body("Clothes item not found.");
-
-//         }
-
-//         if (client == null) {
-            
-//             return ResponseEntity.badRequest().body("Client not found.");
-
-//         }
-        
-//         basketRepository.addToBasket(clothesId);
-
-//         return ResponseEntity.ok("Item added to basket.");
-//     }
-
-//     @DeleteMapping("/basket/remove/{clothesId}")
-
-//     public ResponseEntity<String> removeFromBasket(@PathVariable UUID clothesId) {
-
-//         basketRepository.removeFromBasket(clothesId);
-
-//         return ResponseEntity.ok("Item removed from basket.");
-
-//     }
-
-//     @GetMapping("/basket")
-
-//     public ResponseEntity<Basket> getBasket() {
-
-//         Basket basket = basketRepository.getBasket();
-
-//         if (basket == null || basket.clothesIds.isEmpty()) {
-
-//             return ResponseEntity.ok(new Basket());
-
-//         }
-
-//         return ResponseEntity.ok(basket);
-//     }
-
-//     @PostMapping("/order/{clientId}")
-
-// public ResponseEntity<String> order(@PathVariable UUID clientId) {
-
-//     Basket basket = basketRepository.getBasket();
-
-//     Client client = clientRepository.get(clientId);
-
-//     if (basket == null || basket.clothesIds.isEmpty()) {
-
-//         return ResponseEntity.badRequest().body("Basket is empty. Please add items to the basket before ordering.");
-
-//     }
-
-//     if (client == null) {
-
-//         return ResponseEntity.badRequest().body("Client not found.");
-
-//     }
-
-//     // Calculate total price of items in the basket
-//     int totalPrice = 0;
-
-//     StringBuilder unavailableItems = new StringBuilder();
-
-//     for (UUID clothesId : basket.clothesIds) {
-
-//         Clothes clothes = ClothesRepository.get(clothesId);
-
-//         if (clothes == null) {
-
-//             unavailableItems.append("Item with ID ").append(clothesId).append(" is out of stock.\n");
-
-//         } else {
-
-//             totalPrice += clothes.price;
-
-//         }
-//     }
-
-//     // Check for unavailable items
-
-//     if (unavailableItems.length() > 0) {
-
-//         return ResponseEntity.badRequest().body(unavailableItems.toString());
-
-//     }
-
-//     // Check if the client has enough credits
-
-//     if (client.credit < totalPrice) {
-
-//         return ResponseEntity.badRequest()
-
-//                 .body("Insufficient credits. Your total is " + totalPrice + ", but you only have " + client.credit + " credits.");
-
-//     }
-
-//     // Deduct the total price from client's credits
-
-//     client.credit -= totalPrice;
-
-//     // Update client data in the repository
-
-//     clientRepository.update(client); 
-
-//     // Clear the basket (assuming the order is successfully placed)
-
-//     basketRepository.clearBasket();
-
-//     return ResponseEntity.ok("Order placed successfully! Remaining credits: " + client.credit);
-// }
-
-//     @GetMapping("/clothes")
-
-//     public List<Clothes> list(){
-
-//         return ClothesRepository.list();
-
-//     }
-
-//     @GetMapping("/clothes/{id}")
-
-//     public Clothes get(@PathVariable("id") UUID id){
-
-//         return ClothesRepository.get(id);
-
-//     }
-
-//     @PostMapping("/clothes")
-
-//     public Clothes add(@RequestBody Clothes p){
-
-//         ClothesRepository.add(p);
-
-//         return p;
-
-//     }
-
-//     @PutMapping("/clothes/{id}")
-
-//     public Clothes update(@PathVariable("id") UUID id, @RequestBody Clothes p){
-
-//         p.id = id;
-
-//         ClothesRepository.update(p);
-
-//         return p;
-
-//     }
-
-//     @DeleteMapping("/clothes/{id}")
-
-//     public void delete(@PathVariable("id") UUID id){
-
-//         ClothesRepository.remove(id);
-
-//     }
-
-//  }
+    //     return ResponseEntity.ok(order);
+    // }
+}

@@ -1,18 +1,295 @@
-2024-12-01 00:24:07 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 11244 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
-2024-12-01 00:24:07 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
-2024-12-01 00:24:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2024-12-01 00:24:12 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2024-12-01 00:24:12 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-12-01 00:24:12 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-12-01 00:24:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-12-01 00:24:12 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4614 ms
-2024-12-01 00:24:15 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25218a4d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@bf2aa32, org.springframework.security.web.context.SecurityContextHolderFilter@4e4f4092, org.springframework.security.web.header.HeaderWriterFilter@2b170932, org.springframework.security.web.authentication.logout.LogoutFilter@d70e9a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@2cbe455c, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4cb24e2, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@28367da7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@56da96b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4416e18d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b75b890, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b3d9c38, org.springframework.security.web.access.ExceptionTranslationFilter@2c2e3460, org.springframework.security.web.access.intercept.AuthorizationFilter@b5c902]
-2024-12-01 00:24:15 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2024-12-01 00:24:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2024-12-01 00:24:15 INFO  lsit.Main - Started Main in 10.795 seconds (process running for 12.183)
-2024-12-01 00:24:32 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-01 00:24:32 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-12-01 00:24:32 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2024-12-01 00:24:35 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-2024-12-01 00:28:42 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = [lsit-ken3239/students, ls_it_project, lsit-ken3239/roles/clothingstore/customer, lsit-ken3239/roles/clothingstore/sales, lsit-ken3239/roles/clothingstore/warehousemanager, lsit-ken3239/roles/clothingstore/credit]
-2024-12-01 00:31:20 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = [lsit-ken3239/students, ls_it_project, lsit-ken3239/roles/clothingstore/customer, lsit-ken3239/roles/clothingstore/sales, lsit-ken3239/roles/clothingstore/warehousemanager, lsit-ken3239/roles/clothingstore/credit]
+2024-12-02 00:27:18 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 8260 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 00:27:18 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 00:27:23 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 00:27:23 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:27:23 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 00:27:23 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 00:27:24 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 00:27:24 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5995 ms
+2024-12-02 00:27:29 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5fa0141f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6caeba36, org.springframework.security.web.context.SecurityContextHolderFilter@60f662bd, org.springframework.security.web.header.HeaderWriterFilter@2513155a, org.springframework.security.web.authentication.logout.LogoutFilter@1c92a549, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1aed6f0b, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@3b3546a3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@29fcfc54, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@8ac512e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23bd047f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6029f2a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bbc21bd, org.springframework.security.web.access.ExceptionTranslationFilter@a95cb11, org.springframework.security.web.access.intercept.AuthorizationFilter@4ebfb045]
+2024-12-02 00:27:30 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:27:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 00:27:30 INFO  lsit.Main - Started Main in 14.589 seconds (process running for 15.828)
+2024-12-02 00:27:31 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 00:27:31 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 00:27:31 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-02 00:27:32 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/favicon.ico' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 00:27:56 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = [lsit-ken3239/students, ls_it_project, lsit-ken3239/roles/clothingstore/customer, lsit-ken3239/roles/clothingstore/sales, lsit-ken3239/roles/clothingstore/warehousemanager, lsit-ken3239/roles/clothingstore/credit]
+2024-12-02 00:36:55 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 2512 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 00:36:55 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 00:37:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 00:37:00 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:37:00 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 00:37:00 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 00:37:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 00:37:00 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4659 ms
+2024-12-02 00:37:04 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4cc7e3ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5dd6a4c8, org.springframework.security.web.context.SecurityContextHolderFilter@7254838, org.springframework.security.web.header.HeaderWriterFilter@42ff9a77, org.springframework.security.web.authentication.logout.LogoutFilter@7ea07516, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@53f495f0, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@5efe5b25, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@23bd047f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@47be41c6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e204155, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2513155a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@608b35fa, org.springframework.security.web.access.ExceptionTranslationFilter@2e929182, org.springframework.security.web.access.intercept.AuthorizationFilter@3b3546a3]
+2024-12-02 00:37:05 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:37:05 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 00:37:05 INFO  lsit.Main - Started Main in 12.207 seconds (process running for 13.58)
+2024-12-02 00:37:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 00:37:52 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 00:37:52 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-02 00:37:52 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/clothes/add' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 00:40:50 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 8596 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 00:40:50 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 00:40:54 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 00:40:55 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:40:55 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 00:40:55 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 00:40:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 00:40:55 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5045 ms
+2024-12-02 00:40:58 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13a268cd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b3a6e95, org.springframework.security.web.context.SecurityContextHolderFilter@a95cb11, org.springframework.security.web.header.HeaderWriterFilter@39374689, org.springframework.security.web.authentication.logout.LogoutFilter@7740b0ab, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@682266d8, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@44a93f8a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6029f2a4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4ebfb045, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2513155a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5df2023c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77a2688d, org.springframework.security.web.access.ExceptionTranslationFilter@13234ac9, org.springframework.security.web.access.intercept.AuthorizationFilter@5dd6a4c8]
+2024-12-02 00:41:00 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:41:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 00:41:00 INFO  lsit.Main - Started Main in 11.993 seconds (process running for 13.55)
+2024-12-02 00:41:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 00:41:15 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 00:41:15 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-02 00:41:15 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/clothes/add' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 00:52:19 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 8868 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 00:52:19 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 00:52:24 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 00:52:24 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:52:24 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 00:52:24 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 00:52:25 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 00:52:25 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5192 ms
+2024-12-02 00:52:29 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77ff14ce, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@733fae8, org.springframework.security.web.context.SecurityContextHolderFilter@3f0c6b3c, org.springframework.security.web.header.HeaderWriterFilter@182cc69e, org.springframework.security.web.authentication.logout.LogoutFilter@5423a17, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@32e830a0, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@135e49b2, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@48ae9e8b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5a8d676e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bf65e0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@350d26f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74764622, org.springframework.security.web.access.ExceptionTranslationFilter@3dbb3fb7, org.springframework.security.web.access.intercept.AuthorizationFilter@33187485]
+2024-12-02 00:52:30 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 00:52:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 00:52:30 INFO  lsit.Main - Started Main in 13.052 seconds (process running for 14.191)
+2024-12-02 01:01:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:01:17 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:01:17 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-02 01:01:17 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/clothes/add' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 01:21:28 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 17360 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:21:28 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:21:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:21:33 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:21:33 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:21:33 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:21:34 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:21:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5618 ms
+2024-12-02 01:21:37 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3321291a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dc46f24, org.springframework.security.web.context.SecurityContextHolderFilter@26ffd2c0, org.springframework.security.web.header.HeaderWriterFilter@50ff7063, org.springframework.security.web.authentication.logout.LogoutFilter@1669931a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@690df641, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7db791df, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1d944fc0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@76af34b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fc7fa6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cca31fc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3313463c, org.springframework.security.web.access.ExceptionTranslationFilter@5e24592e, org.springframework.security.web.access.intercept.AuthorizationFilter@ff03361]
+2024-12-02 01:21:39 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:21:39 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:21:39 INFO  lsit.Main - Started Main in 13.324 seconds (process running for 14.861)
+2024-12-02 01:21:39 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:21:39 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:21:39 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-12-02 01:21:39 WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [124] milliseconds.
+2024-12-02 01:22:41 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 16244 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:22:41 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:22:46 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:22:46 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:22:46 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:22:46 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:22:46 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:22:46 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4893 ms
+2024-12-02 01:22:49 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@176333ee, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18e6b72b, org.springframework.security.web.context.SecurityContextHolderFilter@6cceb281, org.springframework.security.web.header.HeaderWriterFilter@2fc7fa6e, org.springframework.security.web.authentication.logout.LogoutFilter@2499b971, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5c5f0edc, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@153cfd86, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@34f23816, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@316d30ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@619c3546, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d944fc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ea75b05, org.springframework.security.web.access.ExceptionTranslationFilter@26ffd2c0, org.springframework.security.web.access.intercept.AuthorizationFilter@76af34b5]
+2024-12-02 01:22:51 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:22:51 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:22:51 INFO  lsit.Main - Started Main in 12.585 seconds (process running for 13.842)
+2024-12-02 01:22:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:22:52 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:22:52 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-02 01:23:22 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 12492 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:23:22 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:23:28 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:23:28 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:23:28 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:23:28 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:23:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:23:28 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5413 ms
+2024-12-02 01:23:31 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a2b7a35, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58186f9f, org.springframework.security.web.context.SecurityContextHolderFilter@6f0c45f4, org.springframework.security.web.header.HeaderWriterFilter@505f45cc, org.springframework.security.web.authentication.logout.LogoutFilter@27d73d22, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1da745a2, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4597e6e3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@28831d69, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@62faf77, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@faec277, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12e007be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f39269d, org.springframework.security.web.access.ExceptionTranslationFilter@12f9f896, org.springframework.security.web.access.intercept.AuthorizationFilter@13cc31ae]
+2024-12-02 01:23:32 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:23:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:23:32 INFO  lsit.Main - Started Main in 11.404 seconds (process running for 12.463)
+2024-12-02 01:23:33 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:23:33 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:23:33 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-02 01:24:44 INFO  lsit.Controllers.HomeController - User accessed the server: Name = Alexis Stratoudakis, Email = strats521@hotmail.com, Groups = 30a8af1874ee01e7e8a89dfed240527a96ee7bb09468fd388f78c0dce4371d1e
+2024-12-02 01:24:49 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 01:25:52 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 14276 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:25:52 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:25:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:25:56 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:25:56 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:25:56 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:25:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:25:56 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3616 ms
+2024-12-02 01:26:00 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@176333ee, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18e6b72b, org.springframework.security.web.context.SecurityContextHolderFilter@6cceb281, org.springframework.security.web.header.HeaderWriterFilter@2fc7fa6e, org.springframework.security.web.authentication.logout.LogoutFilter@2499b971, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5c5f0edc, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@153cfd86, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@34f23816, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@316d30ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@619c3546, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d944fc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ea75b05, org.springframework.security.web.access.ExceptionTranslationFilter@26ffd2c0, org.springframework.security.web.access.intercept.AuthorizationFilter@76af34b5]
+2024-12-02 01:26:01 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:26:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:26:01 INFO  lsit.Main - Started Main in 10.528 seconds (process running for 11.777)
+2024-12-02 01:26:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:26:02 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:26:02 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-02 01:57:23 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 6116 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:57:23 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:57:28 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:57:28 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:57:28 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:57:28 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:57:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:57:28 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5107 ms
+2024-12-02 01:57:33 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@176333ee, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18e6b72b, org.springframework.security.web.context.SecurityContextHolderFilter@6cceb281, org.springframework.security.web.header.HeaderWriterFilter@2fc7fa6e, org.springframework.security.web.authentication.logout.LogoutFilter@2499b971, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5c5f0edc, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@153cfd86, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@34f23816, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@316d30ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@619c3546, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d944fc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ea75b05, org.springframework.security.web.access.ExceptionTranslationFilter@26ffd2c0, org.springframework.security.web.access.intercept.AuthorizationFilter@76af34b5]
+2024-12-02 01:57:34 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:57:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:57:35 INFO  lsit.Main - Started Main in 13.635 seconds (process running for 15.16)
+2024-12-02 01:57:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:57:36 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:57:36 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-02 01:59:08 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 10516 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 01:59:08 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 01:59:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 01:59:12 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:59:12 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 01:59:12 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 01:59:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 01:59:13 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4915 ms
+2024-12-02 01:59:15 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3313463c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9c0d0bd, org.springframework.security.web.context.SecurityContextHolderFilter@7f8c48f3, org.springframework.security.web.header.HeaderWriterFilter@26ffd2c0, org.springframework.security.web.authentication.logout.LogoutFilter@3335afcf, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1b1e1f02, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1da75dde, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@15ac02d5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@176333ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cceb281, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30cafd13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18e6b72b, org.springframework.security.web.access.ExceptionTranslationFilter@67a8bcbb, org.springframework.security.web.access.intercept.AuthorizationFilter@3321291a]
+2024-12-02 01:59:17 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 01:59:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 01:59:17 INFO  lsit.Main - Started Main in 11.677 seconds (process running for 13.078)
+2024-12-02 01:59:18 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 01:59:18 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 01:59:18 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-12-02 02:04:04 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 14020 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:04:04 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:04:08 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:04:08 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:04:08 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:04:08 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:04:08 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:04:08 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3578 ms
+2024-12-02 02:04:11 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@790654d5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f935d49, org.springframework.security.web.context.SecurityContextHolderFilter@67a8bcbb, org.springframework.security.web.header.HeaderWriterFilter@5e24592e, org.springframework.security.web.authentication.logout.LogoutFilter@faec277, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7893c715, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@36f6d25c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@30cafd13, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3321291a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26ffd2c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@273dec10, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3dc46f24, org.springframework.security.web.access.ExceptionTranslationFilter@3ac0a14b, org.springframework.security.web.access.intercept.AuthorizationFilter@595fed99]
+2024-12-02 02:04:12 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:04:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:04:12 INFO  lsit.Main - Started Main in 9.719 seconds (process running for 11.111)
+2024-12-02 02:04:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:04:28 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:04:28 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-02 02:06:06 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 3084 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:06:06 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:06:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:06:12 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:06:12 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:06:12 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:06:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:06:12 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6250 ms
+2024-12-02 02:06:16 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18e6b72b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@316d30ad, org.springframework.security.web.context.SecurityContextHolderFilter@7cca31fc, org.springframework.security.web.header.HeaderWriterFilter@7f8c48f3, org.springframework.security.web.authentication.logout.LogoutFilter@36d697ab, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@153cfd86, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7e31062c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6736f40f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3ea75b05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29090809, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c3c453b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30d5e37c, org.springframework.security.web.access.ExceptionTranslationFilter@d28c214, org.springframework.security.web.access.intercept.AuthorizationFilter@3313463c]
+2024-12-02 02:06:18 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:06:18 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:06:18 INFO  lsit.Main - Started Main in 14.611 seconds (process running for 17.171)
+2024-12-02 02:06:19 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:06:19 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:06:19 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-02 02:06:28 WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [111] milliseconds.
+2024-12-02 02:09:34 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:12:12 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 8720 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:12:12 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:12:18 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:12:18 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:12:18 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:12:18 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:12:18 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:12:18 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5696 ms
+2024-12-02 02:12:21 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a8d676e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74764622, org.springframework.security.web.context.SecurityContextHolderFilter@7bf65e0f, org.springframework.security.web.header.HeaderWriterFilter@7657d90b, org.springframework.security.web.authentication.logout.LogoutFilter@2987d0fa, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5bb97fe7, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@10b87ff6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4afcae7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7ba06506, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f289728, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27502e5c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63dc3420, org.springframework.security.web.access.ExceptionTranslationFilter@182cc69e, org.springframework.security.web.access.intercept.AuthorizationFilter@5d2e6f62]
+2024-12-02 02:12:22 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:12:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:12:22 INFO  lsit.Main - Started Main in 11.788 seconds (process running for 12.751)
+2024-12-02 02:12:23 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:12:23 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:12:23 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2024-12-02 02:12:23 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/clothes/add' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 02:12:23 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:12:25 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:12:40 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 11448 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:12:40 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:12:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:12:45 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:12:45 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:12:45 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:12:45 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:12:45 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5395 ms
+2024-12-02 02:12:49 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@10b87ff6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63262071, org.springframework.security.web.context.SecurityContextHolderFilter@3dda8a2e, org.springframework.security.web.header.HeaderWriterFilter@39851c5, org.springframework.security.web.authentication.logout.LogoutFilter@7de6549d, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7740b0ab, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@3eb9c575, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@416a4275, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2d4f67e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6aa6c17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68a426c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1282f784, org.springframework.security.web.access.ExceptionTranslationFilter@36525ab, org.springframework.security.web.access.intercept.AuthorizationFilter@32e830a0]
+2024-12-02 02:12:50 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:12:50 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:12:50 INFO  lsit.Main - Started Main in 11.773 seconds (process running for 12.951)
+2024-12-02 02:12:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:12:52 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:12:52 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-02 02:12:53 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/clothes/add' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 02:12:53 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:12:58 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:00 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:01 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:01 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:01 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:01 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:02 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:02 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:03 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:13:03 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:20 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:23 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:23 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:23 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:29 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:32 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:33 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:33 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:33 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:34 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:34 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:34 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:14:59 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-12-02 02:15:29 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 17748 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:15:29 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:15:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:15:34 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:15:34 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:15:34 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:15:34 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:15:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4638 ms
+2024-12-02 02:15:37 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7c226095, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ea07516, org.springframework.security.web.context.SecurityContextHolderFilter@6dd20ec9, org.springframework.security.web.header.HeaderWriterFilter@3b0ed98a, org.springframework.security.web.authentication.logout.LogoutFilter@7657d90b, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@66d2885c, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2bfc8558, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@995ad50, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@30af23fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1640f20f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35010a6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65fc8edc, org.springframework.security.web.access.ExceptionTranslationFilter@7d088813, org.springframework.security.web.access.intercept.AuthorizationFilter@110620d]
+2024-12-02 02:15:38 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:15:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:15:38 INFO  lsit.Main - Started Main in 10.133 seconds (process running for 11.196)
+2024-12-02 02:15:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:15:38 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:15:38 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-02 02:15:41 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-12-02 02:17:05 INFO  lsit.Main - Starting Main using Java 20.0.2 with PID 3388 (C:\Users\user\OneDrive\Documents\GitHub\LargeITProject\live-demo-main\target\classes started by user in C:\Users\user\OneDrive\Documents\GitHub\LargeITProject)
+2024-12-02 02:17:05 INFO  lsit.Main - No active profile set, falling back to 1 default profile: "default"
+2024-12-02 02:17:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-02 02:17:09 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:17:09 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-02 02:17:09 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-02 02:17:09 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-02 02:17:09 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4310 ms
+2024-12-02 02:17:12 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1bfa5a13, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b1e1f02, org.springframework.security.web.context.SecurityContextHolderFilter@4fad51a3, org.springframework.security.web.header.HeaderWriterFilter@720a1fd0, org.springframework.security.web.authentication.logout.LogoutFilter@34f23816, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1d77746b, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4ced17f3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@26ffd2c0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1da75dde, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@acb5508, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e24592e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c5f0edc, org.springframework.security.web.access.ExceptionTranslationFilter@33a47707, org.springframework.security.web.access.intercept.AuthorizationFilter@36f6d25c]
+2024-12-02 02:17:15 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 02:17:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 02:17:15 INFO  lsit.Main - Started Main in 11.181 seconds (process running for 12.337)
+2024-12-02 02:17:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 02:17:15 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-02 02:17:15 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms

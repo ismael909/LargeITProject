@@ -29,7 +29,6 @@ public class Config {
                 .userInfoEndpoint(userInfo -> userInfo.userService(oauth2UserService())) // Map GitLab groups to roles
             )
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/basket/**").hasAnyRole("CUSTOMER", "SALES") // Restrict basket endpoints
                 .anyRequest().authenticated() // Require authentication for all other requests
             );
 

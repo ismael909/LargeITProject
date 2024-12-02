@@ -1,24 +1,13 @@
 package lsit.Controllers;
 
-import java.nio.file.AccessDeniedException;
-
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-
-import org.springframework.security.access.prepost.PreAuthorize;
-
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-
-import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
-
 import org.slf4j.Logger;
-
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
@@ -44,17 +33,18 @@ public class HomeController {
         var userAttributes = authentication.getPrincipal().getAttributes();
 
         // Log user details and group memberships
-
+        System.out.println(userAttributes);
         logger.info("User accessed the server: Name = {}, Email = {}, Groups = {}",
 
             userAttributes.get("name"),
 
             userAttributes.get("email"),
 
+            userAttributes.get("sub_legacy"),
+
             groups
 
         );
-
 
         // Return user details as response
 
